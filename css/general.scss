@@ -1,0 +1,425 @@
+@import "variables";
+@import "breakpoints";
+:root{
+	--bs-body-font-size: .9rem;
+	--bs-body-line-height: 1;
+}
+body{
+	font-family: $primary-font;
+	color: $gris-txt;
+	background-color: $white;
+	text-align: left;
+	overflow-x: hidden;
+}
+a,button{
+	color: $gris-txt;
+	outline: none;
+	transition: all .5s ease-out;
+	&:focus{
+		color: $black;
+	}
+}
+.list-none{
+	list-style: none;
+}
+.green{
+	color: $verde-txt;
+}
+#menu{
+	margin-top: 12px;
+	@include media-breakpoint-up(md) {
+		padding: 0;
+	}
+	.logo{
+		height: 1.5rem;
+	}
+	.nav-link{
+		position: relative;
+		padding: 1.4rem 1rem 1rem;
+		&.active{
+			color: $verde-txt;
+			&::before{
+				content: "";
+				position: absolute;
+				display: block;
+				height: 2px;
+				width: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				background-color: $verde-bg;
+			}
+		}
+	}
+	.btn-special{
+		font-weight: 500;
+		text-decoration: none;
+	}
+}
+a .img-fluid{
+	transition: all .5s ease-out;
+}
+.btn {
+	--bs-btn-border-radius: 1.5rem;
+	--bs-btn-padding-t: .8rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: .5rem;
+	padding: var(--bs-btn-padding-t) var(--bs-btn-padding-x) var(--bs-btn-padding-y);
+}
+.btn-primary{
+	--bs-btn-bg: #{$verde-bg};
+	--bs-btn-border-color: #{$verde-bg};
+	--bs-btn-hover-color: #{$verde-txt};
+	--bs-btn-hover-bg: #{$black};
+	--bs-btn-hover-border-color: #{$verde-txt};
+	--bs-btn-active-bg: #{$verde-txt};
+    --bs-btn-active-border-color: #{$verde-txt};
+	--bs-btn-disabled-bg: #{$gris-bg};
+    --bs-btn-disabled-border-color: #{$gris-bg};
+}
+.container{
+	@include media-breakpoint-up(md) {
+		max-width: $ancho-contenido;
+	}
+}
+.title{
+	font-weight: 700;
+	line-height: 1;
+}
+.shadow{
+	box-shadow: rgba($black, 0.2) 0px 7px 29px 0px;
+}
+.shadow2{
+	box-shadow: rgba($black, 0.35) 0px 5px 15px;
+}
+section{
+	background-repeat: no-repeat;    
+    background-size: auto;
+	padding: 2rem 0;
+	&#inicio{
+		height: 70vh;
+		padding: 0;
+		.owl-stage-outer,.owl-stage, .owl-item{
+			height: 100%;
+		}
+		.sub-title{
+			color: $white;
+			font-size: 3rem;			
+			font-weight: 700;
+			line-height: 1;
+			width: 33%;
+			@include media-breakpoint-between(xs,sm) {
+				width: 90%;
+			}
+		}
+	}
+	&#nosotros{
+		background-image: url("../img/mapa.jpg");
+		background-position: left center;
+		background-size: auto 90%;
+		.title{
+			margin-bottom: 2rem;
+		}
+		.txt{
+			@include media-breakpoint-up(md) {
+				margin-left: 6rem;
+			}
+		}
+		.deco{
+			width: 58%;
+			height: 15rem;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			border-top-left-radius: 10rem;
+			border-bottom-left-radius: 10rem;
+			@include media-breakpoint-between(xs,sm) {
+				width: 95%;
+			}
+		}
+	}
+	&#servicios{
+		.servicios{
+			.col-12{
+				&:nth-child(2){
+					margin-top: 1rem;
+				}
+				&:nth-child(3){
+					margin-top: -1rem;
+				}
+			}
+		}
+		.box{
+			padding: 2rem 1.5rem;
+			border-radius: .8rem;
+			margin-bottom: 1.25rem;
+			background-color: $white;
+			position: relative;
+			text-decoration: none;
+			display: block;
+			transition: background-color .5s ease-out;
+			.mini-title{
+				color: $verde-txt;
+				font-weight: 500;
+				margin-top: 14px;
+				transition: color .5s ease-out;
+			}
+			.link{
+				height: 0;
+				opacity: 0;
+				transition: opacity .2s ease-out;
+				i{
+					font-size: 50%;
+				}
+			}
+			.deco{
+				position: absolute;
+				width: 22%;
+				left: 0;
+				top: 10%;
+				&::before{
+					content: "";
+					display: block;
+					background-color: $verde-bg;
+					width: 100%;
+					height: .2rem;
+				}
+				&::after{
+					content: "";
+					display: block;
+					width: .6rem;
+					height: .5rem;
+					border-radius: 10rem;
+					background-color: $verde-bg;
+				}
+			}
+			&:hover{
+				color: $white;
+				background-color: $verde-bg;
+				.mini-title{
+					color: $white;
+					margin-top: 0;
+				}
+				.link{
+					height: auto;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&#informacion{
+		background-image: url("../img/capa-fondo.jpg");
+		padding-top: 31rem;
+    	background-position: top center;
+		.green{
+			color: $verde-bg;
+		}
+		.box{
+			padding: 3.5rem 2rem;
+			border-radius: .8rem;
+			margin-bottom: 1.25rem;
+			background-color: $white;
+			.num{
+				position: relative;
+				&::before{
+					content: "";
+					position: absolute;
+					background-color: $verde-bg;
+					height: 2px;
+					width: 20%;
+					margin: 0 auto;
+					bottom: 2px;
+				}
+			}
+		}
+	}
+	&#productos{
+		background-color: $gris-bg;
+		.title-big{
+			font-size: 7rem;
+			color: rgba($gris-bg2,.5);
+			font-weight: 700;
+			position: absolute;
+			transform: rotate(-90deg) translateY(-50%);
+			left: -18rem;
+			top: 50%;
+			text-align: center;
+			transform-origin: top center;
+		}
+		.carousel{
+			background-color: $white;
+			padding: 2rem 0;
+    		border-radius: 1rem;
+		}
+		.btn-cat{
+			margin-bottom: -5rem;
+		}
+		.producto{			
+			.cont{
+				padding: 0 2rem;
+				.logo-prod{
+					width: 60%;
+					margin-bottom: 1rem;
+					@include media-breakpoint-between(xs,sm) {
+						margin-top: 1rem;
+					}
+				}
+			}
+			.tag{
+				color: $white;
+				background-color: $black;
+				padding: 1.2rem 3rem 1rem 1rem;
+				position: absolute;
+				border-bottom-right-radius: 10rem;
+				border-top-right-radius: 10rem;
+			}
+			.prod{
+				width: 100%;
+				border-top-left-radius: 15rem;
+				border-bottom-left-radius: 15rem;
+				border-top-right-radius: 15rem;
+				border-bottom-right-radius: 5rem;
+			}
+			.txt{
+				@include media-breakpoint-between(xs,sm) {
+					margin-bottom: 2rem;
+				}
+			}
+			.control{
+				width: 4%;
+				font-size: 1.5rem;
+				left: 3rem;
+				bottom: 1rem;
+				@include media-breakpoint-between(xs,sm) {
+				    width: 9%;
+				}
+				button{
+					color: $black;
+					&:hover{
+						color: rgba($black,.5);
+					}
+				}
+			}
+		}
+	}
+	&#clientes-y-proveedores{
+		background-color: $white;
+		background-image: url("../img/objeto-l.png"), url("../img/objeto-r.png");
+		background-position: 0% 33%, 100% 90%;
+		background-size: auto 37%;
+		padding-bottom: 5rem;
+		.green{
+			color: $verde-bg;
+		}
+		.clientes{
+			padding-top: 6rem;
+		}
+		.proveedores{
+			margin-top: 5rem;
+    		margin-bottom: 2rem;
+		}
+		.fila{
+			margin-top: 4rem;
+		}
+		img.round{
+			border-radius: 10rem;
+		}
+	}
+	&#testimonios{
+		background-color: $gris-bg;
+		padding: 4rem 0;
+		.title{
+			margin-bottom: 3rem;
+		}
+		.owl-carousel{
+			@include media-breakpoint-up(md) {
+				.owl-stage-outer{
+					overflow: visible!important;
+				}
+			}
+		}
+		.testimonios{
+			width: 60%;
+			@include media-breakpoint-between(xs,sm) {
+				width: 95%;
+			}
+			.owl-item{
+				.box{
+					padding: 3rem 4.5rem;
+					background-color: $white;
+					background-image: url("../img/quotes.png");
+					background-repeat: no-repeat;
+					background-size: auto 31%;
+					background-position: 10% 22%;
+					border-radius: 1rem;
+					border-bottom: 1rem solid $verde-bg;
+					opacity: .5;
+					filter: blur(2px);
+					transition: all 1s ease-out;
+					@include media-breakpoint-between(xs,sm) {
+					    padding: 3rem 2rem;
+					}
+					.avatar{
+						border-radius: 10rem;
+						width: 7rem;
+						height: 7rem;
+						margin-bottom: 1rem;
+						background-position: center;
+						background-size: cover;
+						background-repeat: no-repeat;
+					}
+				}
+				&.active .box{
+					opacity: 1;
+					filter: blur(0px);
+				}
+			}			
+		}
+	}
+	/*
+	******************************************
+	*/
+}
+#contacto{
+	font-size: .8rem;
+	padding-top: 5rem;
+    padding-bottom: 18rem;
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+	@include media-breakpoint-between(xs,sm) {
+	    padding-top: 3rem;
+    	padding-bottom: 4rem;
+	}
+	.footer-logo{
+		width: 30%;
+		margin-bottom: 1rem;
+	}
+	.mini-title{
+		margin-bottom: 1rem;
+		display: block;
+	}
+	.clm{
+		padding-top: 3rem;
+	}
+	.min-logo{
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			height: 2px;
+			width: 10%;
+			background-color: $gris-bg2;
+			top: 0;
+			left: 0;
+		}
+	}
+	.list-group{
+		border: 0;
+		margin: 1rem 0;
+		.list-group-item{
+			padding: 0;
+			border: none;
+		}
+	}
+}

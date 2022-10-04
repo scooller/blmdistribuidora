@@ -1,0 +1,22 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$ancho-contenido: map-get($grid-breakpoints,'lg');
+
+$primary-font: 'Anek Telugu', sans-serif;
+$icon-font: "Font Awesome 6 Free";
+
+$black: #000;
+$white: #fff;
+
+$gris-txt: #2d2f2a;
+$verde-txt: #87a43b;
+$verde-bg: #7aa52c;
+$gris-bg: #efefef;
+$gris-bg2: #d8d8d6;
