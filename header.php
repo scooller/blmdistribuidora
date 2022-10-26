@@ -27,7 +27,7 @@ $logo=get_sitelogo(false);
 
 <body <?php body_class(); ?>>
     <div id="load" style="position: fixed; width: 100%; height: 100%; background-color: rgba(0,0,0,0.96); z-index: 9999; text-align: center; top: 0;" class="d-flex justify-content-center align-items-center">
-            <img src="<?=$logo_carga?>" style="width: 8%" class="img-fluid">
+		<img src="<?=$logo_carga?>" style="width: 8%" class="img-fluid">
     </div>
 	<div class="container-fluid">
 		<nav id="menu" class="navbar navbar-expand-lg bg-light fixed-top">

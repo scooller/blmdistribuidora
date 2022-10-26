@@ -63,18 +63,20 @@ function currencyFormat(num, fix) {
 	)
 }
 function numScroll() {
-  if (isScrolledIntoView($(".counter")) && !viewed) {
-      viewed = true;
-      $('.counter').each(function () {
-		  $(this).prop('Counter',0).animate({
-			  Counter: $(this).text()
-		  }, {
-			  duration: 4000,
-			  easing: 'swing',
-			  step: function (now) {
-				  $(this).text(currencyFormat(Math.ceil(now),0));
-			  }
+	if($(".counter").length){
+	  if (isScrolledIntoView($(".counter")) && !viewed) {
+		  viewed = true;
+		  $('.counter').each(function () {
+			  $(this).prop('Counter',0).animate({
+				  Counter: $(this).text()
+			  }, {
+				  duration: 4000,
+				  easing: 'swing',
+				  step: function (now) {
+					  $(this).text(currencyFormat(Math.ceil(now),0));
+				  }
+			  });
 		  });
-	  });
-  }
+	  }
+	}
 }

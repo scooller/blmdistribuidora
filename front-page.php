@@ -56,10 +56,12 @@
 		<div id="carouselProductos" class="carousel slide shadow2 wow animate__fadeInUp" data-bs-ride="carousel">
 			<div class="carousel-inner">
 				<?php $query = new WP_Query(array('post_type' => 'producto', 'post_status' => 'publish', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order'));
-    			if ( $query->have_posts() ): $nn=0; while ( $query->have_posts() ): $query->the_post(); $n++; ?>
+    			if ( $query->have_posts() ): $nn=0; while ( $query->have_posts() ): $query->the_post(); $n++; 
+					$categories = get_the_category();
+				?>
 				<div class="carousel-item <?php echo $n==1?'active':''; ?>">
 					<div class="producto text-start">
-						<strong class="tag">INFUSIONES</strong>
+						<strong class="tag text-uppercase"><?php echo esc_html( $categories[0]->name ); ?></strong>
 						<div class="row">
 							<div class="col-md-5 order-m-0 order-1 d-flex align-items-center">
 								<div class="cont">
@@ -113,17 +115,21 @@
 		</div>
 	</div>
 </section>
+<?php
+	$query = new WP_Query(array('post_type' => 'testimonio', 'post_status' => 'publish', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order'));
+	if ( $query->have_posts() ):
+?>
 <section id="testimonios" class="text-center">	
 	<h2 class="title wow animate__fadeInDown">LO QUE OPINAN <span class="green">DE NOSOTROS</span></h2>
 	<div class="testimonios owl-carousel owl-theme mx-auto wow animate__fadeInUp" data-wow-delay=".5s">
-		<?php $query = new WP_Query(array('post_type' => 'testimonio', 'post_status' => 'publish', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order'));
-			if ( $query->have_posts() ): $nn=0; while ( $query->have_posts() ): $query->the_post(); $n++; ?>
+		<?php $nn=0; while ( $query->have_posts() ): $query->the_post(); $n++; ?>
 		<div class="container box shadow2">
 			<div class="avatar mx-auto" style="background-image: url(<?php the_field('imagen') ?>)"></div>
 			<div class="cont"><?php the_content(); ?></div>
 			<strong class="titulo"><?php the_title(); ?><br><span class="green"><?php the_field('cliente') ?></span></strong>
 		</div>
-		<?php endwhile; endif; wp_reset_query(); ?>
+		<?php endwhile; ?>
 	</div>
 </section>
+<?php endif; wp_reset_query(); ?>
 <?php get_footer(); ?> 
