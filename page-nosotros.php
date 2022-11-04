@@ -14,8 +14,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 mb-2 d-flex align-items-center">
-				<div><h2 class="title wow animate__fadeInDown"><?php the_field('titulo_inspira') ?></h2>
-				<a href="<?php echo get_field('link_btn_inspira')["url"]; ?>" target="<?php echo get_field('link_btn_inspira')["target"]; ?>" class="btn btn-primary wow animate__zoomIn"><?php echo get_field('link_btn_inspira')["title"]; ?></a></div>
+				<div class="text-md-start text-center w-100"><h2 class="title text-md-start text-center wow animate__fadeInDown"><?php the_field('titulo_inspira') ?></h2>
+				<a href="<?php echo get_field('link_btn_inspira')["url"]; ?>" target="<?php echo get_field('link_btn_inspira')["target"]; ?>" class="btn btn-primary mb-2 wow animate__zoomIn"><?php echo get_field('link_btn_inspira')["title"]; ?></a></div>
 			</div>
 			<div class="col-md-7 mb-2 d-flex align-items-center">
 				<div class="txt wow animate__fadeInRight"><?php the_field('contenido_inspira') ?></div>
@@ -26,7 +26,7 @@
 <?php $logo=get_sitelogo(false); ?>
 <section id="nuestra-historia" style="background-image: url(<?php the_field('imagen_fondo_extras') ?>)">
 	<div class="contenedor container-fluid g-0 position-relative d-flex align-items-center justify-content-center">
-		<h1 class="title text-white wow animate__fadeInDown position-absolute"><?php the_field('titulo_historia') ?></h1>
+		<h1 class="title text-md-start text-center text-white wow animate__fadeInDown position-absolute"><?php the_field('titulo_historia') ?></h1>
 		<img src="<?php the_field('imagen_fondo_historia') ?>" class="img">
 	</div>
 	<div class="container text-center">		
@@ -47,7 +47,7 @@
 	<div class="container">	
 		<div class="row">
 			<div class="col-md-5 mb-2 d-flex align-items-center">
-				<div><h2 class="title wow animate__fadeInLeft"><?php the_field('titulo_valor') ?></h2></div>
+				<div class="text-md-start text-center w-100"><h2 class="title text-md-start text-center wow animate__fadeInLeft"><?php the_field('titulo_valor') ?></h2></div>
 			</div>
 			<div class="col-md-7 mb-2 d-flex align-items-center">
 				<div class="txt wow animate__fadeInRight"><?php the_field('contenido_valor') ?></div>

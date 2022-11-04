@@ -244,9 +244,10 @@ section{
 		padding-bottom: 6rem;
     	background-position: 50% -8rem;
 		@include media-breakpoint-between(xs,sm) {
-			padding-top: 13rem;
-			background-position: 50% -9rem;
+			padding-top: 9rem;
+			background-position: 50% -1rem;
 			padding-bottom: 2rem;
+			background-size: auto 40%;
 		}
 		.green{
 			color: $verde-bg;
@@ -267,9 +268,6 @@ section{
 					width: 100%;
 					margin: 0 auto;
 					bottom: 2px;
-					@include media-breakpoint-between(xs,sm) {
-						width: 14%;
-					}
 				}
 			}
 		}
@@ -298,12 +296,20 @@ section{
 		.producto{			
 			.cont{
 				padding: 0 2rem;
+				@include media-breakpoint-between(xs,sm) {
+					padding-top: 3rem;
+				}
 				.logo-prod{
 					width: 60%;
 					margin-bottom: 1rem;
 					@include media-breakpoint-between(xs,sm) {
 						margin-top: 1rem;
 					}
+				}
+			}
+			@include media-breakpoint-between(xs,sm) {
+				.col-md-7.order-1{
+					padding-bottom: 2rem;
 				}
 			}
 			.tag{
@@ -477,12 +483,13 @@ section{
 		.mini-title{
 			position: relative;
 			margin-bottom: 1rem;
+			display: inline-block;
 			&::after{
 				content: "";
 				position: absolute;
 				background-color: $verde-bg;
 				height: 2px;
-				width: 25%;
+				width: 100%;
 				margin: 0 auto;
 				bottom: 2px;
 				left: 0;
@@ -505,7 +512,8 @@ section{
 	*/
 }
 #contacto{
-	font-size: .8rem;
+	font-size: .7rem;
+	line-height: 1;
 	padding-top: 5rem;
     padding-bottom: 18rem;
     background-position: center bottom;
@@ -544,6 +552,11 @@ section{
 		.list-group-item{
 			padding: 0;
 			border: none;
+			@include media-breakpoint-between(xs,sm) {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
 	}
 }

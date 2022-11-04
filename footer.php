@@ -80,11 +80,7 @@ $tiempo_espera=(intval(get_field('tiempo_espera','option'))/1000)+1;
         responsive: {
             0: {
 				dots: true,
-                items: 2
-            },
-            600: {
-				dots: false,
-                items: 3
+                items: 4
             },
             1000: {
 				dots: false,

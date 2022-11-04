@@ -58,8 +58,8 @@
 					<div class="producto text-start">
 						<strong class="tag text-uppercase"><?php echo esc_html( $categories[0]->name ); ?></strong>
 						<div class="row">
-							<div class="col-md-5 order-m-0 order-1 d-flex align-items-center">
-								<div class="cont">
+							<div class="col-md-5 order-0 d-flex align-items-center">
+								<div class="cont text-md-start text-center w-100">
 									<img src="<?php the_field('logo_producto'); ?>" class="logo-prod">
 									<div class="txt"><?php the_content(); ?></div>
 								</div>
@@ -72,7 +72,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="col-md-7 order-m-1 order-0">
+							<div class="col-md-7 order-1">
 								<img src="<?php the_field('producto_img'); ?>" class="prod">
 							</div>
 						</div>
@@ -89,7 +89,7 @@
 <section id="clientes-y-proveedores">
 	<div class="container position-relative text-center">
 		<div class="clientes">
-			<h2 class="title text-start animate__fadeInDown">Nuestros<span class="green d-block">CLIENTES</span></h2>
+			<h2 class="title text-md-start txt-center animate__fadeInDown">Nuestros<span class="green d-block">CLIENTES</span></h2>
 			<div class="owl-carousel owl-theme logos fila wow animate__fadeInUp" data-wow-delay=".5s">
 				<?php $query = new WP_Query(array('post_type' => 'cliente', 'post_status' => 'publish', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order'));
     			if ( $query->have_posts() ): $nn=0; while ( $query->have_posts() ): $query->the_post(); $n++; ?>				
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		<div class="proveedores">
-			<h2 class="title text-start wow animate__fadeInDown">Nuestros<span class="green d-block">PROVEEDORES</span></h2>
+			<h2 class="title text-md-start txt-center wow animate__fadeInDown">Nuestros<span class="green d-block">PROVEEDORES</span></h2>
 			<div class="owl-carousel owl-theme logos fila wow animate__fadeInUp" data-wow-delay=".5s">
 				<?php $query = new WP_Query(array('post_type' => 'proveedor', 'post_status' => 'publish', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order'));
     			if ( $query->have_posts() ): $nn=0; while ( $query->have_posts() ): $query->the_post(); $n++; ?>				
