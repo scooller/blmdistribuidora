@@ -7,7 +7,10 @@
     		$content = get_the_content( );
             $nn++;
 			//$featured_img_url = get_the_post_thumbnail_url($post->ID, 'full');
-            $foto=get_field('imagen',$post->ID);          
+            $foto=get_field('imagen',$post->ID);
+			if( isMobile() && get_field('imagen_mobile',$post->ID) ){
+				$foto=get_field('imagen_mobile',$post->ID);
+			}
 			if(get_field('url_destino',$post->ID)): 
 		?>
     	<a href="<?php echo get_field('url_destino',$post->ID); ?>" target="_blank" class="img-carousel h-100 d-flex align-items-center img-<?=$post->ID;?>" style="display:block; background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.3)), url(<?=$foto;?>);">

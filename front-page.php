@@ -3,33 +3,28 @@
 <?php get_template_part( 'part', 'banner' ); ?>
 <section id="nosotros">
 	<div class="container">
-		<h2 class="title wow animate__fadeInDown"><?php the_field('titulo_nosotros'); ?></h2>
-		<div class="txt wow animate__fadeInLeft" data-wow-delay=".5s"><?php the_field('contenido_nosotros'); ?></div>		
+		<h2 class="title text-md-start text-center wow animate__fadeInDown"><?php the_field('titulo_nosotros'); ?></h2>
+		<div class="txt text-md-start text-center wow animate__fadeInLeft" data-wow-delay=".5s"><?php the_field('contenido_nosotros'); ?></div>		
 	</div>
-	<div class="deco ms-auto shadow wow animate__fadeInRight" data-wow-delay=".8s" style="background-image: url(<?php the_field('imagen_fondo'); ?>)"></div>
+	<div class="deco ms-auto d-none d-md-block shadow wow animate__fadeInRight" data-wow-delay=".8s" style="background-image: url(<?php the_field('imagen_fondo'); ?>)"></div>
 </section>
 <section id="servicios">
 	<div class="container">
-		<div class="row ">
-			<div class="col-md-7 col-12">
-				<div class="row servicios">
-				<?php $nn=0; $query = new WP_Query(array('post_type' => 'servicio', 'post_status' => 'publish', 'posts_per_page' => 4, 'order' => 'DESC', 'orderby' => 'menu_order'));
-					if ( $query->have_posts() ): while ( $query->have_posts() ): $query->the_post(); ?>
-					<div class="col-12 col-md-6">
-						<a href="#" class="box shadow wow animate__flipInX" data-wow-delay="<?php echo .6*$nn ?>s">
-							<span class="deco d-flex align-items-center"></span>
-							<h5 class="mini-title"><?php the_title(); ?></h5>
-							<div class="txt"><?php the_excerpt(); ?></div>
-							<div class="link">ver más <i class="fa-solid fa-angle-right"></i></div>
-						</a>
+		<h4 class="title text-center wow animate__fadeInDown"><?php the_field('titulo_servicios'); ?></h4>
+		<div class="txt text-center wow animate__fadeInRight"><?php the_field('contenido_servicios'); ?></div>			
+		<div class="row servicios">
+		<?php $nn=0; $query = new WP_Query(array('post_type' => 'servicio', 'post_status' => 'publish', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order'));
+			if ( $query->have_posts() ): while ( $query->have_posts() ): $query->the_post(); ?>
+			<div class="col-6 col-md-4">
+				<div class="box shadow d-flex align-items-center  justify-content-center text-center wow animate__flipInX" data-wow-delay="<?php echo .6*$nn ?>s">
+					<span class="deco d-flex align-items-center"></span>
+					<div class="cont">
+						<img src="<?php the_field('icono'); ?>" class="img-fluid icono">
+						<h5 class="mini-title"><?php the_title(); ?></h5>
 					</div>
-				<?php $nn++; endwhile; endif; wp_reset_query(); ?>
 				</div>
 			</div>
-			<div class="col-md-5 col-12 ps-md-4">
-				<h4 class="title wow animate__fadeInDown"><?php the_field('titulo_servicios'); ?></h4>
-				<div class="txt wow animate__fadeInRight"><?php the_field('contenido_servicios'); ?></div>		
-			</div>
+		<?php $nn++; endwhile; endif; wp_reset_query(); ?>
 		</div>
 	</div>
 </section>
@@ -40,9 +35,9 @@
 			<?php $nn=0;while( have_rows('datos') ): the_row(); ?>
 			<div class="col-md-4">
 				<div class="box text-center shadow2 wow animate__zoomIn" data-wow-delay="<?php echo .6*$nn ?>s">
-					<h3 class="num green"><span class="counter"><?php the_sub_field('valor'); ?></span><?php the_sub_field('post_num'); ?></h3>
+					<h3 class="num"><?php the_sub_field('pre_num'); ?><span class="counter"><?php the_sub_field('valor'); ?></span><?php the_sub_field('post_num'); ?></h3>
 					<h5 class="green"><?php the_sub_field('titulo'); ?></h5>
-					<div class="txt"><?php the_sub_field('contenido'); ?></div>
+					<div class="txt d-none"><?php the_sub_field('contenido'); ?></div>
 				</div>
 			</div>
 			<?php $nn++;endwhile; ?>
@@ -86,7 +81,9 @@
 				<?php endwhile; endif; wp_reset_query(); ?>
 			</div>
 		</div>
-		<a href="#" class="btn btn-primary mx-auto btn-cat wow animate__flipInX" data-wow-delay=".5s">Ver Catálogo</a>
+		<?php if( get_field('boton_link') ): ?>
+		<a href="<?php echo get_field('boton_link')["url"]; ?>" target="<?php echo get_field('boton_link')["target"]; ?>" class="btn btn-primary mx-auto btn-cat wow animate__flipInX" data-wow-delay=".5s"><?php echo get_field('boton_link')["title"]; ?></a>
+		<?php endif; ?>
 	</div>
 </section>
 <section id="clientes-y-proveedores">

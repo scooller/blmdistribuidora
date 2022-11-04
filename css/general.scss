@@ -139,6 +139,9 @@ section{
 		.owl-stage-outer,.owl-stage, .owl-item{
 			height: 100%;
 		}
+		.btn{
+			font-weight: 600;
+		}
 		.sub-title{
 			color: $white;
 			font-size: 3rem;			
@@ -178,23 +181,10 @@ section{
 		}
 	}
 	&#servicios{
-		.servicios{
-			.col-12{
-				@include media-breakpoint-up(md) {
-					&:nth-child(2){
-						margin-top: 1rem;
-					}
-					&:nth-child(3){
-						margin-top: -1rem;
-					}
-				}
-				@include media-breakpoint-between(xs,sm) {
-					margin-top: 1rem;
-				}
-			}
+		.title{
+			margin-bottom: 2rem;
 		}
-		.box{
-			padding: 2rem 1.5rem;
+		.box{			
 			border-radius: .8rem;
 			margin-bottom: 1.25rem;
 			background-color: $white;
@@ -202,11 +192,20 @@ section{
 			text-decoration: none;
 			display: block;
 			transition: background-color .5s ease-out;
+			@include media-breakpoint-up(md) {
+			padding: 2rem 1.5rem;
+			height: 14rem;
+			}
+			@include media-breakpoint-between(xs,sm) {
+			padding: 0rem 1.5rem;
+			height: 13rem;
+			}
 			.mini-title{
 				color: $verde-txt;
 				font-weight: 500;
 				margin-top: 14px;
 				transition: color .5s ease-out;
+				line-height: 1;
 			}
 			.link{
 				height: 0;
@@ -237,27 +236,17 @@ section{
 					background-color: $verde-bg;
 				}
 			}
-			&:hover{
-				color: $white;
-				background-color: $verde-bg;
-				.mini-title{
-					color: $white;
-					margin-top: 0;
-				}
-				.link{
-					height: auto;
-					opacity: 1;
-				}
-			}
 		}
 	}
 	&#informacion{
 		background-image: url("../img/capa-fondo.jpg");
-		padding-top: 31rem;
+		padding-top: 17rem;
+		padding-bottom: 6rem;
     	background-position: 50% -8rem;
 		@include media-breakpoint-between(xs,sm) {
 			padding-top: 13rem;
 			background-position: 50% -9rem;
+			padding-bottom: 2rem;
 		}
 		.green{
 			color: $verde-bg;
@@ -269,14 +258,18 @@ section{
 			background-color: $white;
 			.num{
 				position: relative;
+				display: inline-block;
 				&::before{
 					content: "";
 					position: absolute;
 					background-color: $verde-bg;
 					height: 2px;
-					width: 20%;
+					width: 100%;
 					margin: 0 auto;
 					bottom: 2px;
+					@include media-breakpoint-between(xs,sm) {
+						width: 14%;
+					}
 				}
 			}
 		}
