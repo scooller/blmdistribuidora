@@ -1,6 +1,3 @@
-var scroll;
-var $grid;
-var md;
 $(function() {
 	// 
 	$(window).scroll(numScroll);
@@ -19,23 +16,12 @@ function loadOk(){
 		live:         true        // default
 	})
 	wow.init();
-   /*
-    if(md.mobile()){
-        scroll = new SmoothScroll('a[href*="#"]',{
-            topOnEmptyHash: true,
-            easing: 'easeInOutCubic',
-            speed: 200,
-            speedAsDuration: true
-        });
-    }else{
-        scroll = new SmoothScroll('a[href*="#"]',{
-            header:'#menu',
-            topOnEmptyHash: true,
-            easing: 'easeInOutCubic',
-            speed: 200,
-            speedAsDuration: true
-        });        
-    }*/
+	const firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
+	firstScrollSpyEl.addEventListener('activate.bs.scrollspy', () => {
+		console.log('Scroll');
+		$('#menu .navbar-collapse.show').removeClass('show');
+		$('#menu .navbar-toggler').addClass('collapsed');
+	})
 }
 $( window ).on( "load",function() {           
     loadOk();

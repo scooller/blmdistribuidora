@@ -15,10 +15,13 @@
 		<div class="row">
 			<div class="col-md-5 mb-2 d-flex align-items-center">
 				<div class="text-md-start text-center w-100"><h2 class="title text-md-start text-center wow animate__fadeInDown"><?php the_field('titulo_inspira') ?></h2>
-				<a href="<?php echo get_field('link_btn_inspira')["url"]; ?>" target="<?php echo get_field('link_btn_inspira')["target"]; ?>" class="btn btn-primary mb-2 wow animate__zoomIn"><?php echo get_field('link_btn_inspira')["title"]; ?></a></div>
+				<a href="<?php echo get_field('link_btn_inspira')["url"]; ?>" target="<?php echo get_field('link_btn_inspira')["target"]; ?>" class="btn btn-primary mb-2 wow animate__zoomIn d-none d-md-inline-block"><?php echo get_field('link_btn_inspira')["title"]; ?></a></div>
 			</div>
 			<div class="col-md-7 mb-2 d-flex align-items-center">
-				<div class="txt wow animate__fadeInRight"><?php the_field('contenido_inspira') ?></div>
+				<div class="txt text-md-start text-center wow animate__fadeInRight">
+					<?php the_field('contenido_inspira') ?>
+					<a href="<?php echo get_field('link_btn_inspira')["url"]; ?>" target="<?php echo get_field('link_btn_inspira')["target"]; ?>" class="btn btn-primary mb-2 wow animate__zoomIn d-md-none d-inline-block"><?php echo get_field('link_btn_inspira')["title"]; ?></a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -36,7 +39,7 @@
 			<div class="col-md-4 mb-2">
 				<div class="box h-100 text-center shadow2 wow animate__zoomIn" data-wow-delay="<?php echo .6*$nn ?>s">
 					<h5 class="mini-title green"><?php the_sub_field('titulo'); ?></h5>
-					<div class="txt"><?php the_sub_field('contenido'); ?></div>
+					<div class="txt text-md-start text-center"><?php the_sub_field('contenido'); ?></div>
 				</div>
 			</div>
 			<?php $nn++;endwhile; ?>
@@ -50,7 +53,7 @@
 				<div class="text-md-start text-center w-100"><h2 class="title text-md-start text-center wow animate__fadeInLeft"><?php the_field('titulo_valor') ?></h2></div>
 			</div>
 			<div class="col-md-7 mb-2 d-flex align-items-center">
-				<div class="txt wow animate__fadeInRight"><?php the_field('contenido_valor') ?></div>
+				<div class="txt text-md-start text-center wow animate__fadeInRight"><?php the_field('contenido_valor') ?></div>
 			</div>
 		</div>
 	</div>

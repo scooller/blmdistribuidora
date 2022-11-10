@@ -17,9 +17,9 @@ a:focus, button:focus { color: #000; }
 #menu .logo { display: none; }
 #menu .logo-negative { display: block; }
 #menu .logo, #menu .logo-negative { height: 1.5rem; }
-@media (max-width: 575.98px) { #menu .navbar-collapse { height: 100vh; } }
+@media (max-width: 575.98px) { #menu .navbar-collapse { background-color: #fff !important; height: 100vh; } }
 #menu .navbar-collapse .nav-link { color: #fff; position: relative; padding: 1.4rem 1rem 1rem; }
-@media (max-width: 575.98px) { #menu .navbar-collapse .nav-link { border: 1px solid #fff; } }
+@media (max-width: 575.98px) { #menu .navbar-collapse .nav-link { border: 1px solid #fff; color: #000; } }
 #menu .navbar-collapse .nav-link.active { color: #87a43b; }
 @media (max-width: 575.98px) { #menu .navbar-collapse .nav-link.active { border-color: #7aa52c; } }
 @media (min-width: 768px) { #menu .navbar-collapse .nav-link.active::before { content: ""; position: absolute; display: block; height: 2px; width: 100%; top: 0; left: 0; right: 0; background-color: #7aa52c; } }
@@ -128,6 +128,5 @@ section#nuestro-valor { background-color: #efefef; padding: 6rem 0; }
 #contacto .min-logo::before { content: ""; position: absolute; height: 2px; width: 10%; background-color: #d8d8d6; top: 0; left: 0; }
 #contacto .list-group { border: 0; margin: 1rem 0; }
 #contacto .list-group .list-group-item { padding: 0; border: none; }
-@media (max-width: 575.98px) { #contacto .list-group .list-group-item { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } }
 
 /*# sourceMappingURL=general.css.map */

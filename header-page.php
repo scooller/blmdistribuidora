@@ -51,7 +51,7 @@ $logo_site=get_sitelogo(false);
 					'walker'          => new bs5navwalker()
 				]);
 				?>
-					<a href="contacto" class="btn-special green ms-auto">Contacto</a>
+					<a href="#contacto" class="btn-special green ms-auto">Contacto</a>
 				</div>
 			</div>
 		</nav>

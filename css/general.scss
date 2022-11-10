@@ -51,8 +51,9 @@ a,button{
 	.logo,.logo-negative{
 		height: 1.5rem;
 	}
-	.navbar-collapse{
+	.navbar-collapse{		
 		@include media-breakpoint-between(xs,sm) {
+			background-color: $white!important;
 			height: 100vh;
 		}
 		.nav-link{
@@ -61,6 +62,7 @@ a,button{
 			padding: 1.4rem 1rem 1rem;
 			@include media-breakpoint-between(xs,sm) {
 				border: 1px solid $white;
+				color: $black;
 			}
 			&.active{
 				color: $verde-txt;
@@ -552,11 +554,6 @@ section{
 		.list-group-item{
 			padding: 0;
 			border: none;
-			@include media-breakpoint-between(xs,sm) {
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
 		}
 	}
 }
